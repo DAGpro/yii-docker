@@ -31,7 +31,7 @@ jobs:
       DOCKERFILE_FLAVOUR: ${{ matrix.dockerfile-flavour }}
       COMPOSE_FILE: ${{ matrix.compose-file }}
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: Set version suffix
       if: startsWith(github.ref, 'refs/tags/')
       run: echo "PHP_IMAGE_VERSION_SUFFIX=-${GITHUB_REF:10}" >> $GITHUB_ENV
